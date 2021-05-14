@@ -1,8 +1,9 @@
 {
   "name": "man-vscode",
   "publisher" : "MAN-ES",
-  "displayName": "man-vscode",
+  "displayName": "MAN VS Code Extension",
   "description": "Manages shared VS Code settings. For MAN-ES internal use.",
+  "icon": "icon.png",
   "version": "0.0.1",
   "repository": {
     "type": "git",
