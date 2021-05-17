@@ -23,7 +23,7 @@ export function getSettings() {
         cancellable: true
     }, (progress, token) => {
         const p = new Promise<void>(resolve => {
-            const child = exec(workspaceFolder, 'git', ['clone', 'https://git-unisource.md-man.biz:7990/scm/eeeabb/vscode.git', '.vscode']);
+            const child = exec(workspaceFolder, 'git', ['clone', 'https://git-unisource.md-man.biz:7990/scm/eeeabb/vscode.git', '.vscode', '-q']);
             resolve();
         });
         return p;
@@ -36,19 +36,19 @@ function exec(workingDir: string, command: string, args: string[]) {
     });
 
     child.stdout.on('data', (data) => {
-        console.debug(`stdout: ${data}`);
+        console.debug(`${data}`);
     });
 
     child.stderr.on('data', (data) => {
-        console.debug(`stderr: ${data}`);
+        vscode.window.showErrorMessage(`ERROR: ${data}`);
+    });
+
+    child.on('error', (err) => {
+        vscode.window.showErrorMessage(`ERROR: ${err}`);
     });
 
     child.on('close', (code) => {
         console.debug(`child process exited with code ${code}`);
-    });
-
-    child.on('error', (err) => {
-        console.debug(`ERROR: ${err}`);
     });
 }
 
