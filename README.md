@@ -10,3 +10,6 @@ Clone the shared .vscode settings folder to the current workspace.
 2. Run the command: "MAN: Get Settings"
 
 ![Get Settings](demo.gif)
+
+## Installing from VSIX
+![Installation](installation.gif)
