@@ -4,7 +4,7 @@
   "displayName": "MAN VS Code Extension",
   "description": "For MAN-ES internal use.",
   "icon": "icon.png",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "repository": {
     "type": "git",
     "url": "https://github.com/gitatman/man-vscode-extension.git"
@@ -24,6 +24,10 @@
       {
         "command": "man-vscode.get-settings",
         "title": "MAN: Get Settings"
+      },
+      {
+        "command": "man-vscode.update-settings",
+        "title": "MAN: Update Settings"
       }
     ]
   },
